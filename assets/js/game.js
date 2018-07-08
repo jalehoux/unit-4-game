@@ -58,7 +58,8 @@ var player = {
             b = $('.img-fluid[value='+val+']');
             b.clone().attr({onclick:'player.getinfo('+val+')'}).prependTo("#myplayer");
             $("#allchars .img-fluid").not(b).clone().attr({onclick:this.val}).prependTo('#remaining');
-            $('#yourchars').replaceWith("<h4> Choose your first opponent!</h2>");
+            $('#status').html("<h4> Choose your first opponent!</h2>");
+            $('#allimgs').remove();
             player.selected = true;
         } else {
             this.selectopp(val);
@@ -72,8 +73,9 @@ var player = {
             $('#attk').html(player.totalatk);
             player.totalhp = player.totalhp - computer.totalcatk;
             $('#hp').html(player.totalhp);
+            $('#status').html("<h4>Attack made.</h4>")
             if(computer.totalhp <= 0) {
-                console.log("defeated");
+                $('#yourchars').html("<h4>Opponent Defeated! Choose another.</h4>");
                 $('#compchar .img-fluid').hide();
                 $('#opphp').html('');
                 $('#cattk').html('');
@@ -104,8 +106,8 @@ var player = {
         computer.totalhp = 0;
         computer.selected = false
         $('#allchars').html(this.domvar);
-        $('#myplayer').html('');
-        $('#compchar').html('');
+        $('#myplayer').html('<h4>My Character</h4>');
+        $('#compchar').html('<h4>Opponent</h4>');
         $('#remaining').html('');
         $('#hp').html('');
         $('#attk').html('');
@@ -127,7 +129,7 @@ var player = {
             c = $('#remaining .img-fluid[value='+val+']');
             c.clone().prependTo('#compchar');
             c.remove();
-            $('#yourchars').replaceWith("<h4> Let the battle begin!</h2>");
+            $('#status').html("<h4> Let the battle begin!</h2>");
             computer.selected = true;
         } else {
             var msg = "<img src='./assets/images/QuiGonJinn.jpg'>" +
