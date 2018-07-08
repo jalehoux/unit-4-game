@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Star Wars RPG</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAYWHcADs7owAlJcEAMjK9AF9f4gBpadYAV1bjABoarwA0NOEANDW9ACgo2gAmJscAKCnoAD0+5gBCQrEAMTLfACoq3QCWlusAMjO7ACss6ABNTdQANDTqAGNj6ABXV8gAPj7eAFpa6QAvL+gARUWQADo7zgA1Nb4AMzPlADQ0wQBkZO4ATEzgAICA2ABOTusALy/YADIyjQAHBwcAMTHjAGBg4QA9Pt8AOzvXABwduQBAQOoASEjsAHNy8AA3N+sAMTK3AIOD6QBFRcMABQUFAFxc5QCFhdMAJyeEAFJStwAxMXgAAwMDAF9gwQCIiOwAR0iaADk5xQA5Od4AXFzVAEZG2gA8PN4AZ2fXAImJ8gA6OngAZWWrADU1yQBkZMcAJCRcACsqbABRUe0AVVW4ADg4lwBdXZkALi/KAENDgABcXO8ALSzbAFBQ6ABBQdkAPj7RAD4+6gBxcuIAJyfZACgonAB5euQAFRWpAE9OmwBPUKYAJSXfAEZGkQBISIMAR0fAAHNz6ABUVO4Aj5DoAERFpQAuLnsANjbQAAgICABsbeEARUTaADIywwAnJ9IAQULHADIy3ABTU6cAaGjfADAwyQAGBgYALy+zAJCQ0ABeXc0AOTnZAGho1wAuLugAR0jgAExNhwAtLeMATEyjAD0+qgAoKK8AY2PmAFJS5QACAgIAKSinAC0tugBOTr8AODjEAFRU6AAxMNsATE3bAD8/4gCsreIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AmV8X2AAJwAAAAAAJ4IKa0BDdYRNHFAAAAAAAIMDblIJGUJ2R2FvRQA6ABMrew0wLSQQiQVwd1x6AABsWBF4HxYUDlMiB4hIPQAeZ1U1fy9RVi6GFzwyaQ9mT1Q/VQAARGMbLQAAihJtXRVqLAAAAAAhXjoAAABkAX0YBAAAAAAASyUAOgAAAFczOzEAAAAAACoIAAAAAAAGPkZzAAAAAAAoWwAAAAAAQX4AOAAAAAB5GgsgADQAAIAAAE45AAAjNmKHDHEAACZZAIEATAAAAABaHQAAAAApAAAAAABJAAAAdIVyAABKAAAAAAAAaAAAAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <a class="navbar-brand" href="#">Jacob Lehoux</a>
+                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1 class="display-4">Star Wars RPG Game</h1>
+            </div>   
+        </div>
+        <div class="container">
+            <div class="row" id="allchars">
+                <div class="col-lg-12" id="yourchars">
+                    <img src="./assets/images/luke.jpg" class="img-fluid" value="0" alt="Responsive image" onclick="player.selectchar(0)">
+                    <img src="./assets/images/obi-wan_kenobi.jpg" class="img-fluid" value="1" alt="Responsive image" onclick="player.selectchar(1)">
+                    <img src="./assets/images/Darth-Maul.jpeg" class="img-fluid" value="2" alt="Responsive image" onclick="player.selectchar(2)">
+                    <img src="./assets/images/Palpatine_FandD.png" class="img-fluid" value="3" alt="Responsive image" onclick="player.selectchar(3)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" id="myplayer">
+
+                </div>
+                <div class="col-lg-4" id="compchar">
+
+                </div>
+                <div class="col-lg-4" id="remainingchar">
+                        Remaining characters
+                    <div id="remaining"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    Game Dashboard and Status
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <button type="button" id="attack" class="btn btn-success" onclick='player.makeattack()'>ATTACK!</button>
+                            <button type="button" id="attack" class="btn btn-danger" onclick='player.reset()'>RESET!</button>
+                        </div>
+                        <div class="col-lg-4">
+                            Your Character
+                            <div id="hpleft">HP Remaining: <span id="hp"></span></div>
+                            <div id="attackpower">Attack Power: <span id="attk"></span></div> 
+                        </div>
+                        <div class="col-lg-4">
+                            Opponent
+                            <div id="opphpleft">HP Remaining: <span id="opphp"></span></div>
+                            <div id="cattackpower">Attack Power: <span id="cattk"></span></div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.10/dist/js/alertify.js"></script>
+    <script src="assets/js/game.js"></script>    
+   </body>
+</html>

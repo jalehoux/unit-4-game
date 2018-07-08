@@ -1,0 +1,12 @@
+.jumbotron {
+    background: url('../images/background.jpg') no-repeat center center;
+    text-align: center;
+    color:white;
+}
+
+.img-fluid { 
+    width: 200px;
+    height: 200px;
+  }
+
+
