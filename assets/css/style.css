@@ -9,4 +9,13 @@
     height: 200px;
   }
 
+  .row {
+      background-color:lightblue;
+      border-radius: 25px;
+      padding: 10px;
+      margin-bottom: 15px;
+      text-align:center;
+      height:auto;
+  }
+
 

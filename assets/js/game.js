@@ -4,6 +4,8 @@ var player = {
     selected: false,
     numattacks: 3,
     domvar: $('#yourchars').clone(),
+    wins: 0,
+    losses: 0,
     allcharacters: [
         {
         character: {
@@ -78,9 +80,11 @@ var player = {
                 this.numattacks--;
                 computer.selected = false;
                 if(this.numattacks == 0){
+                    this.wins++;
                     this.reset('win');
                 }
             } else if(player.totalhp <= 0) {
+                this.losses++;
                 this.reset('loss');
             }
         } else {
@@ -106,9 +110,9 @@ var player = {
         $('#hp').html('');
         $('#attk').html('');
         if(result == 'loss'){
-            console.log("reset game result was a " + result);
+            $('#losses').html(this.losses);
         } else if (result == 'win') {
-            console.log("reset game result was a " + result);
+            $('#wins').html(this.wins);
         } else {
             console.log("game reset no outcome");
         }
