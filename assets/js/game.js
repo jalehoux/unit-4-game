@@ -3,7 +3,7 @@ var player = {
     totalatk: 0,
     selected: false,
     numattacks: 3,
-    domvar: $('#yourchars').clone(),
+    domvar: $('#allimgs').clone(),
     wins: 0,
     losses: 0,
     allcharacters: [
@@ -67,15 +67,19 @@ var player = {
     },
     makeattack: function() {
         if(this.selected == true && computer.selected == true) {
+            var shadowattk = player.totalatk;
+            var shadowhp = player.totalhp;
+            var shadowcatk = computer.totalcatk;
+            var shadowopphp = computer.totalhp;
             computer.totalhp = computer.totalhp - player.totalatk;
             $('#opphp').html(computer.totalhp);
             player.totalatk = player.totalatk + player.totalatk;
             $('#attk').html(player.totalatk);
             player.totalhp = player.totalhp - computer.totalcatk;
             $('#hp').html(player.totalhp);
-            $('#status').html("<h4>Attack made.</h4>")
+            $('#status').html("<h4>Attack made. You dealt " + shadowattk + " damage leaving opponent "+ shadowopphp +". Opponent dealt "+ shadowcatk + " back leaving you with " + shadowhp + ".  Your attack rose to " + player.totalatk+".</h4>")
             if(computer.totalhp <= 0) {
-                $('#yourchars').html("<h4>Opponent Defeated! Choose another.</h4>");
+                $('#status').html("<h4>Opponent Defeated! Choose another.</h4>");
                 $('#compchar .img-fluid').hide();
                 $('#opphp').html('');
                 $('#cattk').html('');
@@ -90,8 +94,8 @@ var player = {
                 this.reset('loss');
             }
         } else {
-            var msg = "<img src='./assets/images/darth-vader.jpg'>" +
-            "<h3 align=center>\"I find your lack of faith disturbing.\"</h3>" +
+            var msg = "<img src='./assets/images/Count-dooku.jpg'>" +
+            "<h3 align=center>\"Twice the pride double the fall.\"</h3>" +
             "<p align=center>Choose a player and opponent before attacking</p>";
             alertify.logPosition("top right");
             alertify.error(msg);
@@ -105,7 +109,7 @@ var player = {
         computer.totalcatk = 0;
         computer.totalhp = 0;
         computer.selected = false
-        $('#allchars').html(this.domvar);
+        $('#yourchars').append(this.domvar);
         $('#myplayer').html('<h4>My Character</h4>');
         $('#compchar').html('<h4>Opponent</h4>');
         $('#remaining').html('');
@@ -113,10 +117,28 @@ var player = {
         $('#attk').html('');
         if(result == 'loss'){
             $('#losses').html(this.losses);
+            $('#status').html("<h4>You lost the battle! Choose another character.</h4>")
+            var msg = "<img src='./assets/images/darth-vader.jpg'>" +
+            "<h3 align=center>\"I find your lack of faith disturbing.\"</h3>" +
+            "<p align=center>Choose a player and opponent before attacking</p>";
+            alertify.logPosition("top right");
+            alertify.error(msg);
         } else if (result == 'win') {
             $('#wins').html(this.wins);
+            $('#status').html("<h4>You won the battle! Choose another character.</h4>")
+            var msg = "<img src='./assets/images/yoda.jpg'>" +
+            "<h3 align=center>\"Mind what you have learned. Save you it can.\"</h3>" +
+            "<p align=center>You have won! Choose another character to play again.</p>";
+            alertify.logPosition("top right");
+            alertify.success(msg);
         } else {
-            console.log("game reset no outcome");
+            $('#status').html("<h4>Choose your character below!</h4>")
+            var msg = "<img src='./assets/images/Hansolo.jpg'>" +
+            "<h3 align=center>\"Don’t everyone thank me at once.\"</h3>" +
+            "<p align=center>Game reset. Click a new character to start again.</p>";
+            alertify.logPosition("top right");
+            alertify.success(msg);
+
         }
     },
     selectopp: function(val){
