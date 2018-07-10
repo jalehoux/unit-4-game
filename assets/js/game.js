@@ -121,7 +121,7 @@ var player = {
             $('#status').html("<h4>You lost the battle! Choose another character.</h4>")
             var msg = "<img src='./assets/images/darth-vader.jpg'>" +
             "<h3 align=center>\"I find your lack of faith disturbing.\"</h3>" +
-            "<p align=center>Choose a player and opponent before attacking</p>";
+            "<p align=center>You have lost! Choose another character to play again.</p>";
             alertify.logPosition("top right");
             alertify.error(msg);
         } else if (result == 'win') {
