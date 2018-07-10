@@ -108,7 +108,8 @@ var player = {
         this.numattacks = 3;
         computer.totalcatk = 0;
         computer.totalhp = 0;
-        computer.selected = false
+        computer.selected = false;
+        player.selected = false;
         $('#yourchars').append(this.domvar);
         $('#myplayer').html('<h4>My Character</h4>');
         $('#compchar').html('<h4>Opponent</h4>');
